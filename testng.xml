@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test verbose="2" preserve-order="true" name="C:/Users/ITKHAN/IdeaProjects/Tutorials/selenium-webdriver">
+        <classes>
+            <class name="org.example.ActionsDemo">
+                <methods>
+                    <include name="test_actions"/>
+                </methods>
+            </class>
+            <class name="org.example.Alerts">
+                <methods>
+                    <include name="test_alerts"/>
+                </methods>
+            </class>
+            <class name="org.example.Calendar">
+                <methods>
+                    <include name="test_selectCalendarDate"/>
+                </methods>
+            </class>
+            <class name="org.example.DynamicDropDown">
+                <methods>
+                    <include name="test_departureArrival"/>
+                    <include name="test_country"/>
+                    <include name="test_checkboxes"/>
+                    <include name="test_enabledDisabled"/>
+                    <include name="test_assignment1"/>
+                </methods>
+            </class>
+            <class name="org.example.EndtoEnd">
+                <methods>
+                    <include name="test_e2eUI"/>
+                </methods>
+            </class>
+            <class name="org.example.FrameHandling">
+                <methods>
+                    <include name="test_frameSwitching"/>
+                </methods>
+            </class>
+            <class name="org.example.Locators2">
+                <methods>
+                    <include name="loginTest"/>
+                    <include name="logoutTest"/>
+                </methods>
+            </class>
+            <class name="org.example.MiscellaneousTopics">
+                <methods>
+                    <include name="test_SSLCheck"/>
+                    <include name="test_MaximizeWindowDeleteCookies"/>
+                    <include name="test_Screenshot"/>
+                    <include name="test_BrokenLinks"/>
+                </methods>
+            </class>
+            <class name="org.example.Scope">
+                <methods>
+                    <include name="test_limitDriverScope"/>
+                </methods>
+            </class>
+            <class name="org.example.Selenium4">
+                <methods>
+                    <include name="test_RelativeLocators"/>
+                    <include name="test_NewWindowTab"/>
+                    <include name="test_ElementScreenshot"/>
+                    <include name="test_SizeAndPosition"/>
+                </methods>
+            </class>
+            <class name="org.example.StaticDropDown">
+                <methods>
+                    <include name="test_currencyDropdown"/>
+                    <include name="test_passengerDropdown"/>
+                </methods>
+            </class>
+            <class name="org.example.StreamsInJava">
+                <methods>
+                    <include name="test_SortTable"/>
+                    <include name="test_paginationTable"/>
+                    <include name="test_filterTable"/>
+                </methods>
+            </class>
+            <class name="org.example.Synchronization">
+                <methods>
+                    <include name="test_addTocartAndApplyCoupon"/>
+                </methods>
+            </class>
+            <class name="org.example.WindowHandles">
+                <methods>
+                    <include name="test_windowHandles"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
