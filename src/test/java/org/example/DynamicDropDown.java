@@ -5,6 +5,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
@@ -48,6 +49,9 @@ public class DynamicDropDown {
         //better to use parent child relationship instead of index in xpath
         //driver.findElement(By.xpath("(//a[@value='MAA'])[2]")).click();
         driver.findElement(By.xpath("//div[@id='glsctl00_mainContent_ddl_destinationStation1_CTNR'] //a[@value='MAA']")).click();
+
+        //select the current date
+        driver.findElement(By.cssSelector(".ui-state-default.ui-state-highlight")).click();
     }
 
     /**
@@ -87,6 +91,56 @@ public class DynamicDropDown {
         System.out.println(driver.findElement(By.cssSelector("input[id*='SeniorCitizenDiscount']")).isSelected());
 
         Assert.assertTrue(driver.findElement(By.cssSelector("input[id*='SeniorCitizenDiscount']")).isSelected());
+    }
+
+    /**
+     * Selenium native isEnabled() method clicks on element to see if it is enabled or disabled. If disabled, click should not work.
+     * But in modern websites, clicking on disable element will enable the element.
+     * In our case, we can get the style attribute and check the opacity value
+     */
+    @Test
+    public void test_enabledDisabled() {
+        driver.get("https://rahulshettyacademy.com/dropdownsPractise/");
+
+//        System.out.println(driver.findElement(By.name("ctl00$mainContent$rbtnl_Trip")).isEnabled());
+        System.out.println(driver.findElement(By.id("Div1")).getAttribute("style"));
+        driver.findElement(By.id("ctl00_mainContent_rbtnl_Trip_1")).click();
+//        System.out.println(driver.findElement(By.name("ctl00$mainContent$rbtnl_Trip")).isEnabled());
+        System.out.println(driver.findElement(By.id("Div1")).getAttribute("style"));
+        if (driver.findElement(By.id("Div1")).getAttribute("style").contains("1")) {
+            System.out.println("its enabled");
+            Assert.assertTrue(true);
+        } else {
+            Assert.assertTrue(false);
+        }
+
+    }
+
+    @Test
+    public void test_assignment1() {
+        driver.get("https://rahulshettyacademy.com/angularpractice/");
+
+        driver.findElement(By.name("name")).sendKeys("rahul");
+
+        driver.findElement(By.name("email")).sendKeys("hello@abc.com");
+
+        driver.findElement(By.id("exampleInputPassword1")).sendKeys("123456");
+
+        driver.findElement(By.id("exampleCheck1")).click();
+
+        WebElement dropdown = driver.findElement(By.id("exampleFormControlSelect1"));
+
+        Select abc = new Select(dropdown);
+
+        abc.selectByVisibleText("Female");
+
+        driver.findElement(By.id("inlineRadio1")).click();
+
+        driver.findElement(By.name("bday")).sendKeys("02/02/1992");
+
+        driver.findElement(By.cssSelector(".btn-success")).click();
+
+        System.out.println(driver.findElement(By.cssSelector(".alert-success")).getText());
     }
 
 
