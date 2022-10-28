@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Loan Department" parallel="false" thread-count="6">
+
+    <test name="Regression">
+        <groups>
+            <run>
+                <include name ="Smoke"/>        <!--Run specific tests from all the classes by grouping them-->
+                <!--<exclude name ="Smoke"/>-->
+            </run>
+        </groups>
+        <classes>
+            <class name="TestNGTutorial.day1"/>
+            <class name="TestNGTutorial.day2"/>
+            <class name ="TestNGTutorial.day4"/>
+            <class name="TestNGTutorial.day3"/>
+        </classes>
+    </test>
+
+</suite>
