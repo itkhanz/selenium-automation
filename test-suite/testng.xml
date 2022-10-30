@@ -2,19 +2,19 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Loan Department" parallel="tests" thread-count="6">
     <listeners>
-        <listener class-name="TestNGTutorial.Listeners"/>
+        <listener class-name="RSA.TestNG.Listeners"/>
     </listeners>
 
     <test name="Personal Loan">     <!--Group your tests into different test sets so to run them according to requirement-->
         <parameter name="URL" value="personalloan.com"/>        <!--This is a test level parameter-->
         <classes>
-            <class name="TestNGTutorial.day1">
+            <class name="RSA.TestNG.day1">
                 <methods>
                     <include name ="Demo"/>    <!-- To run specifc methods from the class, use include tag-->
                 </methods>
             </class>
-            <class name="TestNGTutorial.day2"/>
-            <class name="TestNGTutorial.day4"/>
+            <class name="RSA.TestNG.day2"/>
+            <class name="RSA.TestNG.day4"/>
         </classes>
     </test>
 
@@ -22,7 +22,7 @@
         <parameter name="URL" value="carloan.com"/>         <!--This is a test level parameter-->
         <parameter name="APIKey/usrname" value="123456"/>   <!--This is a test level parameter-->
         <classes>
-            <class name="TestNGTutorial.day3">
+            <class name="RSA.TestNG.day3">
                 <methods>
                     <!--<exclude name="MobileLoginCarLoan"/>-->
                     <exclude name="API.*"/>      <!--regular expression exclude all the methods that starts with the API-->

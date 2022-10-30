@@ -1,8 +1,7 @@
-package org.example;
+package RSA.Selenium;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -13,7 +12,7 @@ import org.testng.annotations.Test;
 
 import java.time.Duration;
 
-public class ActionsDemo {
+public class FrameHandling {
     private static WebDriver driver;
 
     @BeforeClass
@@ -32,16 +31,22 @@ public class ActionsDemo {
     }
 
     @Test
-    public void test_actions() {
-        driver.get("https://www.amazon.com/");
-        driver.manage().window().maximize();
+    public void test_frameSwitching() {
 
-        Actions actionObj = new Actions(driver);
+        driver.get("https://jqueryui.com/droppable/");
 
-        WebElement move = driver.findElement(By.cssSelector("a[id='nav-link-accountList']"));
+        System.out.println(driver.findElements(By.tagName("iframe")).size());
 
-        actionObj.moveToElement(driver.findElement(By.id("twotabsearchtextbox"))).click().keyDown(Keys.SHIFT).sendKeys("hello").doubleClick().build().perform();
+        driver.switchTo().frame(driver.findElement(By.className("demo-frame")));
 
-        actionObj.moveToElement(move).contextClick().build().perform();
+        driver.findElement(By.id("draggable")).click();
+
+        Actions a = new Actions(driver);
+
+        WebElement drag = driver.findElement(By.id("draggable"));
+        WebElement drop = driver.findElement(By.id("droppable"));
+        a.dragAndDrop(drag, drop).build().perform();
+
+        driver.switchTo().defaultContent();
     }
 }

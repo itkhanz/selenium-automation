@@ -1,4 +1,4 @@
-package TestNGTutorial;
+package RSA.TestNG;
 
 import org.testng.ITestContext;
 import org.testng.ITestListener;

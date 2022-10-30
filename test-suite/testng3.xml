@@ -10,10 +10,10 @@
             </run>
         </groups>
         <classes>
-            <class name="TestNGTutorial.day1"/>
-            <class name="TestNGTutorial.day2"/>
-            <class name ="TestNGTutorial.day4"/>
-            <class name="TestNGTutorial.day3"/>
+            <class name="RSA.TestNG.day1"/>
+            <class name="RSA.TestNG.day2"/>
+            <class name ="RSA.TestNG.day4"/>
+            <class name="RSA.TestNG.day3"/>
         </classes>
     </test>
 

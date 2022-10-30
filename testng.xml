@@ -3,7 +3,7 @@
 <suite name="All Test Suite">
     <test verbose="2" preserve-order="true" name="C:/Users/ITKHAN/IdeaProjects/Tutorials/selenium-webdriver">
         <classes>
-            <class name="TestNGTutorial.day1">
+            <class name="RSA.TestNG.day1">
                 <methods>
                     <include name="Demo"/>
                 </methods>

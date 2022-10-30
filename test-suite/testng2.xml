@@ -3,7 +3,7 @@
 <suite name="Loan Department" parallel="tests" thread-count="6">
     <test name="Personal Loan">
         <packages>
-            <package name= "TestNGTutorial"/>       <!--You can also run the whole package instead of running classes-->
+            <package name= "TestNGRSA"/>       <!--You can also run the whole package instead of running classes-->
         </packages>
     </test>
 </suite>
