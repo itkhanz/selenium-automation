@@ -58,6 +58,32 @@ public class SeleniumGrid {
      *
      */
 
+    /**
+     * Detailed Steps
+     * First configure the Hub
+     *
+     * 1) Download the latest Selenium Server file from https://www.selenium.dev/downloads/
+     * 2) You can place the Selenium Server jar file anywhere in your hard drive,Lets place it on the C: Drive
+     * 3) Open command prompt and navigate to the C: Drive
+     * 4) On the command prompt, type java -jar selenium-4.1.0.jar hub
+     *
+     *
+     * Setup Node Machine
+     *
+     * 1)we need to find out the IP Address of the Hub Machine. Go to Command Prompt and type IPCONFIG to find out the IP Address.
+     * This means that the IP Address of the Hub Machine will become http:// + Hub Machine IP Address + Hub Port =  http://192.168.1.164:4444
+     * 2)It is required to download the Selenium Server jar on the Node Machine as well.
+     * 3) Open Command Prompt. If you are setting up Node on different machine, log on to that machine and open Command Prompt.
+     * 4) To register Hub Machine with Node Machine, type;
+     * java -jar selenium-server-4.1.0.jar node
+     * 5) After executing the command then return to the Hub and navigate the URL http://localhost:4444 or http://192.168.1.164:4444 and
+     * the hub will now display the node which is attached to it.
+     *
+     * java -jar selenium-server-4.1.0.jar node --hub http://localhost:4444/grid/register port 5656
+     * java -Dwebdriver.chromedriver.driver=chromedriver.exe -jar selenium-server-4.1.0.jar node http://10.247.240.20:4444/grid/register  browser browserName=chrome port 5566
+     *
+     */
+
     @Test
     public void GoogleTest() throws MalformedURLException {
         DesiredCapabilities caps = new DesiredCapabilities();
