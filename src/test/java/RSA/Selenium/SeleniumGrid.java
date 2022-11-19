@@ -28,7 +28,7 @@ public class SeleniumGrid {
 //		caps.setCapability(CapabilityType.BROWSER_NAME, "chrome");
 
         //This is the URL of the hub on which selenium hub is running
-        String hubUrl = "http://100.82.255.117:4444";
+        String hubUrl = "http://<HUB-IP>:4444";
         driver = new RemoteWebDriver(new URL(hubUrl), caps);
 
         //waits for 5 seconds for elements to load on page
@@ -88,7 +88,7 @@ public class SeleniumGrid {
     public void GoogleTest() throws MalformedURLException {
         DesiredCapabilities caps = new DesiredCapabilities();
         caps.setBrowserName("chrome");
-        String hubUrl = "http://100.82.255.117:4444";
+        String hubUrl = "http://<HUB-IP>:4444";
         WebDriver driver = new RemoteWebDriver(new URL(hubUrl), caps);
 
         driver.get("http://google.com");
@@ -105,7 +105,7 @@ public class SeleniumGrid {
         //caps.setBrowserName("firefox");
         caps.setCapability(CapabilityType.BROWSER_NAME, "firefox");
 
-        String hubUrl = "http://100.82.255.117:4444";
+        String hubUrl = "http://<HUB-IP>:4444";
         WebDriver driver = new RemoteWebDriver(new URL(hubUrl), caps);
         driver.get("http://rahulshettyacademy.com");
         System.out.println(driver.getTitle());
